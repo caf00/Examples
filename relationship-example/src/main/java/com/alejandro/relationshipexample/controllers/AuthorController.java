@@ -1,13 +1,10 @@
 package com.alejandro.relationshipexample.controllers;
 
 import com.alejandro.relationshipexample.entities.Author;
+import com.alejandro.relationshipexample.entities.Book;
 import com.alejandro.relationshipexample.services.AuthorService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,6 +25,11 @@ public class AuthorController {
 
     @PostMapping
     public ResponseEntity<Author> saveAuthor(@RequestBody Author author) {
-        return ResponseEntity.ok(this.authorService.saveAhuthor(author));
+        return ResponseEntity.ok(this.authorService.saveAuthor(author));
+    }
+
+    @GetMapping("/{id}/books")
+    public ResponseEntity<List<Book>> getBooksForAuthor(@PathVariable Long id) {
+        return ResponseEntity.ok(this.authorService.getBookForAuthor(id));
     }
 }

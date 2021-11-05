@@ -1,6 +1,7 @@
 package com.alejandro.relationshipexample.services;
 
 import com.alejandro.relationshipexample.entities.Author;
+import com.alejandro.relationshipexample.entities.Book;
 import com.alejandro.relationshipexample.repositories.AuthorRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +16,16 @@ public class AuthorService {
         this.authorRepository = authorRepository;
     }
 
-    public Author saveAhuthor(Author author) {
+    public Author saveAuthor(Author author) {
         return this.authorRepository.save(author);
     }
 
     public List<Author> getAllAuthors() {
         return this.authorRepository.findAll();
+    }
+
+    public List<Book> getBookForAuthor(Long id) {
+        Author author = this.authorRepository.getById(id);
+        return author.getBooks();
     }
 }

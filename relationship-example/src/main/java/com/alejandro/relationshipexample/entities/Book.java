@@ -11,14 +11,14 @@ public class Book implements Serializable {
     private Long id;
     private String title;
     private int pages;
-    @ManyToOne
-    @JoinColumn(name = "editorial_id")
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "editorial_id", nullable = false)
     private Editorial editorial;
-    @ManyToOne
-    @JoinColumn(name = "author_id")
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
-    private Book() {
+    protected Book() {
     }
 
     public Book(String title, int pages, Editorial editorial, Author author) {
@@ -46,5 +46,16 @@ public class Book implements Serializable {
 
     public Author getAuthor() {
         return author;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", pages=" + pages +
+                ", editorial=" + editorial.getName() +
+                ", author=" + author.getName() +
+                '}';
     }
 }

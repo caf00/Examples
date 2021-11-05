@@ -1,6 +1,7 @@
 package com.alejandro.relationshipexample.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name="editorials")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Editorial implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +19,7 @@ public class Editorial implements Serializable {
     @OneToMany(mappedBy = "editorial")
     private List<Book> books;
 
-    private Editorial() {
+    protected Editorial() {
     }
 
     public Editorial(String name) {
@@ -34,9 +36,5 @@ public class Editorial implements Serializable {
 
     public List<Book> getBooks() {
         return books;
-    }
-
-    public void addBooks(List<Book> books) {
-        this.books = books;
     }
 }
