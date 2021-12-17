@@ -15,10 +15,7 @@ public class UpdateClientUseCaseImpl implements UpdateClientUseCase{
     public Client execute(Client client) {
         Client clientToUpdate = this.clientRepository.findClientById(client.getId())
                 .orElseThrow(()->new RuntimeException("Client not exist."));
-        System.out.println(client.toString());
-        System.out.println(clientToUpdate.toString());
         clientToUpdate.updateFrom(client);
-        System.out.println(clientToUpdate.toString());
         return this.clientRepository.saveOrUpdateClient(clientToUpdate);
     }
 }
