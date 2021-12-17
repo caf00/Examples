@@ -1,9 +1,9 @@
 package com.alejandro.testupdate.web;
 
 import com.alejandro.testupdate.core.domain.Client;
-import com.alejandro.testupdate.core.useCase.CreateClientUseCase;
-import com.alejandro.testupdate.core.useCase.GetAllClientsUseCase;
-import com.alejandro.testupdate.core.useCase.UpdateClientUseCase;
+import com.alejandro.testupdate.core.usecase.CreateClientUseCase;
+import com.alejandro.testupdate.core.usecase.GetAllClientsUseCase;
+import com.alejandro.testupdate.core.usecase.UpdateClientUseCase;
 import com.alejandro.testupdate.web.request.CreateClientRequest;
 import com.alejandro.testupdate.web.request.UpdateClientRequest;
 import com.alejandro.testupdate.web.response.ClientResponse;

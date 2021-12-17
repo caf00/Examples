@@ -2,7 +2,7 @@ package com.alejandro.testupdate.web.config;
 
 import com.alejandro.testupdate.db.ClientJpaRepository;
 import com.alejandro.testupdate.db.ClientRepositoryImpl;
-import com.alejandro.testupdate.core.useCase.*;
+import com.alejandro.testupdate.core.usecase.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

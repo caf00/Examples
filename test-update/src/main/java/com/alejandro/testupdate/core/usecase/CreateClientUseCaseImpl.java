@@ -1,4 +1,4 @@
-package com.alejandro.testupdate.core.useCase;
+package com.alejandro.testupdate.core.usecase;
 
 import com.alejandro.testupdate.core.domain.Client;
 import com.alejandro.testupdate.core.domain.ClientRepository;
