@@ -13,7 +13,7 @@ public class UpdateClientUseCaseImpl implements UpdateClientUseCase{
 
     @Override
     public Client execute(Client client) {
-        Client clientToUpdate = this.clientRepository.findClientById(client.getId())
+        var clientToUpdate = this.clientRepository.findClientById(client.getId())
                 .orElseThrow(()->new RuntimeException("Client not exist."));
         clientToUpdate.updateFrom(client);
         return this.clientRepository.saveOrUpdateClient(clientToUpdate);

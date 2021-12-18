@@ -29,12 +29,14 @@ public class Client {
     }
 
     public void updateFrom(Client client) {
-        if(client.getName()!=null) this.name = client.getName();
-        if(client.getLastName()!=null) this.lastName = client.getLastName();
-        if(client.getCity()!=null) this.city = client.getCity();
-        if(client.getAddress()!=null) this.address = client.getAddress();
-        if(client.getEmail()!=null) this.email = client.getEmail();
-        if(client.getPhone()!=null) this.phone = client.getPhone();
+        if(client!=null){
+            if(client.getName()!=null) this.name = client.getName();
+            if(client.getLastName()!=null) this.lastName = client.getLastName();
+            if(client.getCity()!=null) this.city = client.getCity();
+            if(client.getAddress()!=null) this.address = client.getAddress();
+            if(client.getEmail()!=null) this.email = client.getEmail();
+            if(client.getPhone()!=null) this.phone = client.getPhone();
+        }
     }
 
     public Integer getId() {

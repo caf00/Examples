@@ -30,7 +30,7 @@ public class ClientRepositoryImpl implements ClientRepository {
 
     @Override
     public Client saveOrUpdateClient(Client client) {
-        ClientDb clientDb = this.clientJpaRepository.save(new ClientDb(client));
+        var clientDb = this.clientJpaRepository.save(new ClientDb(client));
         return clientDb.toClient();
     }
 
