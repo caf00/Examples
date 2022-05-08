@@ -1,0 +1,15 @@
+package com.alejandro.JPAexampleMtoM.dtos.actor;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public class ActorDto {
+    private Integer id;
+    private String name;
+}
