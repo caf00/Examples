@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @AllArgsConstructor
 public class DemoCriteriaApiApplication implements CommandLineRunner {
 
-	private BookJpaRepository repository;
+	private final BookJpaRepository repository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoCriteriaApiApplication.class, args);

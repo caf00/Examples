@@ -1,5 +1,7 @@
 package com.aleDev.democriteriaAPI;
 
+import lombok.AllArgsConstructor;
+
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -9,13 +11,10 @@ import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
+@AllArgsConstructor
 public class CustomSearchBookRepositoryImpl implements CustomSearchBookRepository {
 
     private final EntityManager em;
-
-    public CustomSearchBookRepositoryImpl(EntityManager em) {
-        this.em = em;
-    }
 
     @Override
     public List<Book> getBooksByAuthorNameAndTitle(String authorName, String title) {
